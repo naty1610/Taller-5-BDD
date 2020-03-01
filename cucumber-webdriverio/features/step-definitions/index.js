@@ -12,8 +12,8 @@ Given('I go to losestudiantes home screen', () => {
 });
 
 When('I open the login screen', () => {
-  $('button=Ingresar').waitForExist(5000);
-  $('button=Ingresar').waitForDisplayed(5000);
+  $('button=Ingresar').waitForExist(10000);
+  $('button=Ingresar').waitForDisplayed(10000);
   $('button=Ingresar').click();
 });
 
@@ -45,7 +45,42 @@ When(/^I fill with (.*) and (.*)$/ , (email, password) => {
   
    var passwordInput = cajaLogIn.$('input[name="password"]');
    passwordInput.click();
-   passwordInput.keys(password)
+   passwordInput.keys(password);
+});
+
+When(/^I fill the inputs with (.*) with (.*) with (.*) and (.*)$/ , (name, lastname, email, password) => {
+   var cajaSignUp = $('.cajaSignUp');
+  
+   cajaSignUp.$('input[name="nombre"]').waitForExist(5000);
+   cajaSignUp.$('input[name="nombre"]').waitForDisplayed(5000);
+   
+   var nameInput = cajaSignUp.$('input[name="nombre"]');
+   nameInput.click();
+   nameInput.keys(name);
+
+   var lastnameInput = cajaSignUp.$('input[name="apellido"]');
+   lastnameInput.click();
+   lastnameInput.keys(lastname);
+
+   var mailInput = cajaSignUp.$('input[name="correo"]');
+   mailInput.click();
+   mailInput.keys(email);
+
+   var selectMaster = cajaSignUp.$('select[name="idPrograma"]');
+   var optionMaster = selectMaster.$('option[value="12"]');
+   optionMaster.click();
+   
+   var passwordInput = cajaSignUp.$('input[name="password"]');
+   passwordInput.click();
+   passwordInput.keys(password);
+
+   var checkTerms = cajaSignUp.$('input[name="acepta"]');
+   checkTerms.click();
+});
+
+When('I try to register', () => {
+    var cajaSignUp = $('.cajaSignUp');
+    cajaSignUp.$('button=Registrarse').click();
 });
 
 Then('I expect to not be able to login', () => {
@@ -65,4 +100,16 @@ Then('I expect to obtain {string}', a => {
     var buttonText = browser.$('.dropdown-menu').$('li').$('a').getText();
     expect(buttonText).to.include(a);
 
+});
+
+Then('I expect to see message {string}', h2 => {
+    $('h2').waitForExist(5000);
+    var h2Text = browser.$('h2').getText();
+    expect(h2Text).to.include(h2);
+});
+
+Then('I expect to see error {string}', error => {
+    $('.aviso.alert.alert-danger').waitForDisplayed(5000);
+    var alertText = browser.$('.aviso.alert.alert-danger').getText();
+    expect(alertText).to.include(error);
 });
