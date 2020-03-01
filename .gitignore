@@ -1,0 +1,6 @@
+/node_modules
+/errorShots
+/package-lock.json
+/cucumber-webdriverio/node_modules/*
+/cucumber-webdriverio/package-lock.json
+*.apk
