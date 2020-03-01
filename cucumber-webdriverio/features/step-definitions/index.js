@@ -34,13 +34,11 @@ When('I try to login', () => {
   cajaLogIn.$('button=Ingresar').click();
 });
 
-Then('I expect to not be able to login', () => {
-  $('.aviso.alert.alert-danger').waitForDisplayed(5000);
-});
-
 When(/^I fill with (.*) and (.*)$/ , (email, password) => {
     var cajaLogIn = $('.cajaLogIn');
   
+   cajaLogIn.$('input[name="correo"]').waitForExist(5000);
+   cajaLogIn.$('input[name="correo"]').waitForDisplayed(5000);
    var mailInput = cajaLogIn.$('input[name="correo"]');
    mailInput.click();
    mailInput.keys(email);
@@ -50,8 +48,21 @@ When(/^I fill with (.*) and (.*)$/ , (email, password) => {
    passwordInput.keys(password)
 });
 
+Then('I expect to not be able to login', () => {
+    $('.aviso.alert.alert-danger').waitForDisplayed(5000);
+});
+
 Then('I expect to see {string}', error => {
     $('.aviso.alert.alert-danger').waitForDisplayed(5000);
     var alertText = browser.$('.aviso.alert.alert-danger').getText();
     expect(alertText).to.include(error);
+});
+
+Then('I expect to obtain {string}', a => {
+    $('.dropDown').waitForExist(10000);
+    $('.dropDown').$('button[id="cuenta"]').click();
+    $('.dropdown-menu').waitForExist(15000);
+    var buttonText = browser.$('.dropdown-menu').$('li').$('a').getText();
+    expect(buttonText).to.include(a);
+
 });

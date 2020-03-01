@@ -14,3 +14,15 @@ Scenario Outline: Login failed with wrong inputs
       | email            | password | error                    |
       |                  |          | "Ingresa una contraseña"   |
       | miso@gmail.com   |    1234  | "Upss! El correo y"      |
+
+Scenario Outline: Login success
+
+  Given I go to losestudiantes home screen
+    When I open the login screen
+    And I fill with <email> and <password>
+    And I try to login
+    Then I expect to obtain <a>
+
+    Examples:
+      | email                      | password       | a                    |
+      | dn.lecca@uniandes.edu.co   |    1234567890  | "Salir"      |
