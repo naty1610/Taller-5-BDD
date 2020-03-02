@@ -6,6 +6,18 @@ Feature: Rutas y paraderos
         Given I press "Rutas"
         Then I should see "Portal El Dorado"
     
+    Scenario: As a user I want to plan a travel 
+        Given I press "Viajar en Transmi, SITP o Taxi"
+        Given I press "Transmilenio"
+        Given I press "Punto de origen"
+        Given I press "Punto de destino"
+        Given I press "Transmilenio"
+        Then I wait for 1 second
+        Given I press "Punto de destino"
+        Given I enter "Bib" into input field number 1
+        Given I press "Biblioteca Tintal"
+        Then I should see "Biblioteca Tintal"
+    
     Scenario: As a user I want to see in Transmilenio Tag the route 2 Portal 20 de Julio
         Given I press "Rutas"
         Given I press "TRANSMILENIO"
@@ -48,14 +60,12 @@ Feature: Rutas y paraderos
 
 
     Scenario: As a user I want to see in Todos the street AC 13 and 183 bus
-        #button to remove the splash screen
         Given I press "Paraderos"
         Given I press "AC 13"
         Given I press "183"
         Then I should see "Br. Roma"
 
     Scenario: As a user I want to see in Transmilenio the 21 Ángeles station and B50 bus
-        #button to remove the splash screen
         Given I press "Paraderos"
         Given I press "TRANSMILENIO"
         Given I press "21 Ángeles"
@@ -63,9 +73,10 @@ Feature: Rutas y paraderos
         Then I should see "Portal Suba"
     
     Scenario: As a user I want to see in SITP the street AC 13 and 15 bus
-        #button to remove the splash screen
         Given I press "Paraderos"
         Given I press "SITP"
         Given I press "AC 13"
         Given I press "15"
         Then I should see "AV. Tintal"
+    
+    
