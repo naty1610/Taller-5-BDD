@@ -4,3 +4,4 @@
 /cucumber-webdriverio/node_modules/*
 /cucumber-webdriverio/package-lock.json
 *.apk
+.idea/*
