@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0290fb7f-b964-475f-ab79-a08307fcb932" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/screenshot_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/screenshot_0.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screenshot_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/screenshot_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/calabash.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
