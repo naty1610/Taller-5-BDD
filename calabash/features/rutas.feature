@@ -1,4 +1,4 @@
-Feature: Rutas y paraderos
+Feature: Rutas
 
     Scenario: As a user I want to see all Rutas
         Given I press "Paraderos"               
@@ -48,6 +48,7 @@ Feature: Rutas y paraderos
         Given I press "COMPLEMENTARIO"
         Given I press "ESPECIAL"
         Given I press "ALIMENTADOR"
+        Then I wait for 1 second
         Given I press "1-3"
         Then I should see "Portal de la 80"
     
@@ -58,25 +59,5 @@ Feature: Rutas y paraderos
         Given I press "Hospital Centro Oriental GSG"
         Then I should see "14-3"
 
-
-    Scenario: As a user I want to see in Todos the street AC 13 and 183 bus
-        Given I press "Paraderos"
-        Given I press "AC 13"
-        Given I press "183"
-        Then I should see "Br. Roma"
-
-    Scenario: As a user I want to see in Transmilenio the 21 Ángeles station and B50 bus
-        Given I press "Paraderos"
-        Given I press "TRANSMILENIO"
-        Given I press "21 Ángeles"
-        Given I press "B50"
-        Then I should see "Portal Suba"
-    
-    Scenario: As a user I want to see in SITP the street AC 13 and 15 bus
-        Given I press "Paraderos"
-        Given I press "SITP"
-        Given I press "AC 13"
-        Given I press "15"
-        Then I should see "AV. Tintal"
     
     
